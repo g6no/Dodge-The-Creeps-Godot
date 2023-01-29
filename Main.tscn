@@ -19,6 +19,7 @@ mob_scene = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+mouse_filter = 2
 color = Color( 0.333333, 0.482353, 0.592157, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -40,13 +41,13 @@ curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
-[node name="HUD" parent="." instance=ExtResource( 4 )]
-
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]

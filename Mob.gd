@@ -15,5 +15,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	print(event)
 	if event is InputEventMouseButton and event.pressed:
 		queue_free()
